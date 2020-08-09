@@ -13,13 +13,13 @@ tool programmato in C con licenza gplv3,è in grado di generare una password pse
 *32bit*
 
 ```batch
-gcc -m32 mainPasswd.c passwdFunc.c -o passGenerator 
+gcc -m32 mainPasswd.c passwdFunc.c -o passwdGenerator 
 ```
 
 *64 bit*
 
 ```batch
-gcc mainPasswd.c passwdFunc.c -o passGenerator 
+gcc mainPasswd.c passwdFunc.c -o passwdGenerator 
 ```
 
 **================================**
@@ -27,31 +27,31 @@ gcc mainPasswd.c passwdFunc.c -o passGenerator
 **instruction linux**
 
 ```shell
-./passGenerator
+./passwdGenerator
 ```
 
 or
 
 ```shell
-./passGenerator --h
+./passwdGenerator --h
 ```
 
 or
 
 ```shell
-./passGenerator help
+./passwdGenerator help
 ```
 
 or
 
 ```shell
-./passGenerator --help
+./passwdGenerator --help
 ```
 
 or
 
 ```shell
-./passGenerator -h
+./passwdGenerator -h
 ```
 
 *output linux:*

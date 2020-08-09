@@ -1,3 +1,3 @@
 #!/bin/bash
-gcc mainPasswd.c passwdFunc.c -o passGenerator
+gcc mainPasswd.c passwdFunc.c -o passwdGenerator
 
