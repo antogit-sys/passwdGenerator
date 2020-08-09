@@ -4,8 +4,9 @@
 #include <time.h>
 
 #include "librarypasswd.h"
+#include "macrodefine.h"
 
-int main(int argc,char *argv[])
+int main(int argc,char **argv)
 {
 	char name[C];
 	char *p=NULL;
@@ -18,7 +19,7 @@ int main(int argc,char *argv[])
 	//argv[3] --opts
 	//argv[4] num opts
 	
-	if(argc==1 || strcmp(argv[1],"--help")==0 || strcmp(argv[1],"-h")==0 || strcmp(argv[1],"--h")==0|| strcmp(argv[1],"help")==0||strcmp(argv[1],"-help")==0){ //se non ci sono argomenti o gli argomenti sono -h/--help stampa intro
+	if(argc<5 || strcmp(argv[1],"--help")==0 || strcmp(argv[1],"-h")==0 || strcmp(argv[1],"--h")==0|| strcmp(argv[1],"help")==0||strcmp(argv[1],"-help")==0){ //se non ci sono argomenti o gli argomenti sono -h/--help stampa intro
 		intro();
 	}else if(argc>1 && strcmp(argv[3],"--opts")==0 ){
 			
@@ -29,12 +30,14 @@ int main(int argc,char *argv[])
 			return 0;
 		}
 		
-		p=alloc(lunghezza); //alloco array
+		p=(char*)alloc(lunghezza); //alloco array
 		controlAlloc(p); //controllo se l'allocazione è andata a buon fine
 		
-		for(int i=0;i<lunghezza;i++){
+		/*fixed bug for windows*/
+		int i=0;
+		do{
 			name[i]=(char)argv[1][i]; //salvo nome
-		}
+		}while(argv[1][i++]!='\0');
 		
 		int verifica=randNum(p,lunghezza,opts); //opts range[1;6] 
 		if(verifica==-1){ //se verifica=-1 l'utente ha sbagliato numero opzione
@@ -42,7 +45,14 @@ int main(int argc,char *argv[])
 			return -1;	
 		}else{
 			fileW(name,p,lunghezza);
-			printf("\npassword: %s\n\n",p);
+			printf("\npassword: ");
+			
+			/*stampo pass*/
+			for(int i=0;i<lunghezza;i++){
+				printf("%c",p[i]);	
+			}
+			printf("\n\n");
+			
 			free(p);
 		}	
 	}

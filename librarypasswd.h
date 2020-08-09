@@ -1,7 +1,3 @@
-/* MACRO */
-#define controlAlloc(x) if(x==NULL){printf("\nallocazione fallita...");return 0;}
-#define C 100
-
 /* PROTOTIPI DI FUNZIONI */
 void intro(); //help command
 char *alloc(int); //allocazione array char

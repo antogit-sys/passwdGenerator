@@ -3,26 +3,32 @@
 #include <string.h>
 #include <time.h>
 
+#include "macrodefine.h"
+
 void intro()
 {	
 	printf("+----------------------+\n");
 	printf("|    passwdGenerator   |\n");
 	printf("+----------------------+\n");
 	printf("\nUSE:\n\n");
-	printf("\t./passwdGenerator [name] [nchar] --opts [n]\n");
+	printf(USE);
+	printf("\nPARAMETERS:\n\n");
+	printf("\t [name]\t\tnome password\n");
+	printf("\t [nchar]\tnumero di caratteri della password\n");
+	printf("\t --opts\t\tspecificare opzione [n]\n");
+	printf("\t [n]\t\topzione (da 1 a 5 opzioni)\n\n");
 	printf("\nNUMBER OPTIONS:\n\n");
 	printf("\t --opts 1\tcaratteri completi\n"  );
 	printf("\t --opts 2\tsolo lettere minuscole\n");
 	printf("\t --opts 3\tsolo lettere MAIUSCOLE\n");
 	printf("\t --opts 4\tsolo numeri(pin)\n");
 	printf("\nUSE EXAMPLE:\n\n");
-	printf("\t./passwdGenerator instagram 32 --opts 1\n");
+	printf(USEXAMPLE);
 	
 }
 char *alloc(int lung)
 {
-	char *p=NULL; 
-	return p=(char*)malloc(lung*sizeof(char));
+	return malloc(lung*sizeof(char));
 }
 int randNum(char p[],int lung,int opts)
 {	
@@ -48,7 +54,7 @@ int randNum(char p[],int lung,int opts)
 	
 	srand(time(NULL));
 	for(int i=0;i<lung;i++){
-			p[i]=rand()%c1+c2; //da 33 a 126
+			p[i]=rand()%c1+c2; 
 	}
 return 0;	
 }
@@ -58,7 +64,12 @@ void fileW(char name[],char p[],int l)
 
 	fp=fopen("filePass.txt","a"); //mod. append
 	if(fp){ //se il file è stato aperto,allora...
-		fprintf(fp,"%s: %s\n",name,p); //scrivi "{name}: {password}\n"
+		//scrivi "{name}: {password}\n
+		fprintf(fp,"%s: ",name);
+		for(int i=0;i<l;i++){ //fixed bug for windows
+			fprintf(fp,"%c",p[i]);	
+		}
+		fprintf(fp,"\n");
 	}else{
 		printf("\nerrore sull'apertura del file...");	
 	}
