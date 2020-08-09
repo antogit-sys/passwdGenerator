@@ -2,8 +2,6 @@
 
 tool programmato in C con licenza gplv3,è in grado di generare una password pseudocasuale facendo uso di diversi parametri;alla prima esecuzione verra creato un file chiamato filePass.txt in cui sono contenuti tutti i futuri nomi e le corrispettive password associate.
 
-
-
 **1)compiled Linux:**
 
 ```shell
@@ -24,9 +22,9 @@ gcc -m32 mainPasswd.c passwdFunc.c -o passGenerator
 gcc mainPasswd.c passwdFunc.c -o passGenerator 
 ```
 
-**=================================**
+**================================**
 
-**instruction**
+**instruction linux**
 
 ```shell
 ./passGenerator
@@ -56,18 +54,24 @@ or
 ./passGenerator -h
 ```
 
+*output linux:*
 
-
-*output:*
-
-```shell
+```bash
 +----------------------+
 |    passwdGenerator   |
 +----------------------+
 
 USE:
 
-	./passwdGenerator [name] [nchar] --opts [n]
+	./namefile [name] [nchar] --opts [n]
+
+PARAMETERS:
+
+	 [name]		nome password
+	 [nchar]	numero di caratteri della password
+	 --opts		specificare opzione [n]
+	 [n]		opzione (da 1 a 5 opzioni)
+
 
 NUMBER OPTIONS:
 
@@ -78,6 +82,38 @@ NUMBER OPTIONS:
 
 USE EXAMPLE:
 
-	./passwdGenerator instagram 32 --opts 1
+	./passwdGenerator instagram 32 --opts 1 
+```
 
+
+
+*output windows:*
+
+```batch
++----------------------+
+|    passwdGenerator   |
++----------------------+
+
+USE:
+
+    namefile.exe [name] [nchar] --opts [n]
+
+PARAMETERS:
+
+     [name]       nome password
+     [nchar]      numero di caratteri della password
+     --opts       specificare opzione [n]
+     [n]          opzione (da 1 a 5 opzioni)
+
+
+NUMBER OPTIONS:
+
+     --opts 1    caratteri completi
+     --opts 2    solo lettere minuscole
+     --opts 3    solo lettere MAIUSCOLE
+     --opts 4    solo numeri(pin)
+
+USE EXAMPLE:
+
+    passwdGenerator.exe instagram 32 --opts 1
 ```
