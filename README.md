@@ -63,29 +63,27 @@ or
 
 USE:
 
-	./namefile [name] [nchar] --opts [n]
+    ./namefile [name] [nchar] --opts [n]
 
 PARAMETERS:
 
-	 [name]		nome password
-	 [nchar]	numero di caratteri della password
-	 --opts		specificare opzione [n]
-	 [n]		opzione (da 1 a 5 opzioni)
+     [name]        nome password
+     [nchar]    numero di caratteri della password
+     --opts        specificare opzione [n]
+     [n]        opzione (da 1 a 5 opzioni)
 
 
 NUMBER OPTIONS:
 
-	 --opts 1	caratteri completi
-	 --opts 2	solo lettere minuscole
-	 --opts 3	solo lettere MAIUSCOLE
-	 --opts 4	solo numeri(pin)
+     --opts 1    caratteri completi
+     --opts 2    solo lettere minuscole
+     --opts 3    solo lettere MAIUSCOLE
+     --opts 4    solo numeri(pin)
 
 USE EXAMPLE:
 
-	./passwdGenerator instagram 32 --opts 1 
+    ./passwdGenerator instagram 32 --opts 1 
 ```
-
-
 
 *output windows:*
 
@@ -117,3 +115,13 @@ USE EXAMPLE:
 
     passwdGenerator.exe instagram 32 --opts 1
 ```
+
+
+
+<mark>*PHOTO*</mark>
+
+<div>
+    <img src="photo/photo1.png">
+</div>
+
+    <img title="" src="photo/photo2.png" alt="" data-align="inline">
