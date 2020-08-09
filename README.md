@@ -68,9 +68,9 @@ USE:
 PARAMETERS:
 
      [name]        nome password
-     [nchar]    numero di caratteri della password
+     [nchar]       numero di caratteri della password
      --opts        specificare opzione [n]
-     [n]        opzione (da 1 a 5 opzioni)
+     [n]           opzione (da 1 a 5 opzioni)
 
 
 NUMBER OPTIONS:
@@ -115,8 +115,6 @@ USE EXAMPLE:
 
     passwdGenerator.exe instagram 32 --opts 1
 ```
-
-
 
 <mark>*PHOTO*</mark>
 
