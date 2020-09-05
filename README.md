@@ -1,6 +1,6 @@
 **{ PasswdGenerator }**
 
-tool programmato in C con licenza gplv3,è in grado di generare una password pseudocasuale facendo uso di diversi parametri;alla prima esecuzione verra creato un file chiamato filePass.txt in cui sono contenuti tutti i futuri nomi e le corrispettive password associate.
+tool programmato in C con licenza gplv3,è in grado di generare una password pseudocasuale facendo uso di diversi parametri;alla prima esecuzione verra creato un file chiamato filePass.txt in cui saranno contenuti tutti i futuri nomi e le corrispettive password associate.
 
 **1)compiled Linux:**
 
