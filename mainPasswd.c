@@ -61,7 +61,7 @@ int main(int argc,char **argv)
 			for(size_t i=0;i<lenght;++i){
 				fputc(p[i],stdout);	
 			}
-			fputs("\n",stdout);
+			putchar('\n');
 		}
 			
 	}else{
