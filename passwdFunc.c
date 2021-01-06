@@ -10,21 +10,25 @@ int rand_num(char* p,size_t lenght,size_t opts)
 	}else{
 		int c1,c2;
 		switch(opts){
-			case 1:	c1=94; /*tutti i char*/
-					c2=33;
-					break;
+			case 1:	
+				c1=94; /*tutti i char*/
+				c2=33;
+				break;
 			
-			case 2: c1=26; /*solo lettere minuscole*/
-					c2=97;
-					break;
+			case 2: 
+				c1=26; /*solo lettere minuscole*/
+				c2=97;
+				break;
 	
-			case 3:	c1=26; /*solo lettere maiuscole*/
-					c2=65;
-					break;
+			case 3:	
+				c1=26; /*solo lettere maiuscole*/
+				c2=65;
+				break;
 				
-			case 4:	c1=10; /*solo numeri*/
-					c2=48;
-					break;
+			case 4:	
+				c1=10; /*solo numeri*/
+				c2=48;
+				break;
 		}
 		srand(time(NULL));
 		for(size_t i=0;i<lenght;++i){
