@@ -19,7 +19,7 @@
 #	include <stdio.h>
 #endif
 
-#ifndef _TIME_H_
-#	define _TIME_H_
+#ifndef _TIME_H
+#	define _TIME_H
 #	include <time.h>
 #endif
