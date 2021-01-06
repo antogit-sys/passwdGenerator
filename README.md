@@ -48,12 +48,6 @@ or
 ./passwdGenerator --help
 ```
 
-or
-
-```shell
-./passwdGenerator -h
-```
-
 *output linux:*
 
 ```bash
@@ -67,10 +61,10 @@ USE:
 
 PARAMETERS:
 
-     [name]        nome password
+     [name]        nome account
      [nchar]       numero di caratteri della password
      --opts        specificare opzione [n]
-     [n]           opzione (da 1 a 5 opzioni)
+     [n]           opzione (da 1 a 4 opzioni)
 
 
 NUMBER OPTIONS:
@@ -98,10 +92,10 @@ USE:
 
 PARAMETERS:
 
-     [name]       nome password
+     [name]       nome account
      [nchar]      numero di caratteri della password
      --opts       specificare opzione [n]
-     [n]          opzione (da 1 a 5 opzioni)
+     [n]          opzione (da 1 a 4 opzioni)
 
 
 NUMBER OPTIONS:
@@ -119,7 +113,9 @@ USE EXAMPLE:
 <mark>*PHOTO*</mark>
 
 <div>
-    <img src="photo/photo1.png">
-</div>
+    <img src="photo/image1.png">
+</div>  
 
-    <img title="" src="photo/photo2.png" alt="" data-align="inline">
+<div>
+    <img src="photo/image2.png">
+</div>

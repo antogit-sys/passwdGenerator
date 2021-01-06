@@ -1,77 +1,60 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-
 #include "macrodefine.h"
 
-void intro()
+int rand_num(char* p,size_t lenght,size_t opts)
 {	
-	printf("+----------------------+\n");
-	printf("|    passwdGenerator   |\n");
-	printf("+----------------------+\n");
-	printf("\nUSE:\n\n");
-	printf(USE);
-	printf("\nPARAMETERS:\n\n");
-	printf("\t [name]\t\tnome password\n");
-	printf("\t [nchar]\tnumero di caratteri della password\n");
-	printf("\t --opts\t\tspecificare opzione [n]\n");
-	printf("\t [n]\t\topzione (da 1 a 5 opzioni)\n\n");
-	printf("\nNUMBER OPTIONS:\n\n");
-	printf("\t --opts 1\tcaratteri completi\n"  );
-	printf("\t --opts 2\tsolo lettere minuscole\n");
-	printf("\t --opts 3\tsolo lettere MAIUSCOLE\n");
-	printf("\t --opts 4\tsolo numeri(pin)\n");
-	printf("\nUSE EXAMPLE:\n\n");
-	printf(USEXAMPLE);
+	int done;
 	
-}
-char *alloc(int lung)
-{
-	return malloc(lung*sizeof(char));
-}
-int randNum(char p[],int lung,int opts)
-{	
-	int c1=0;
-	int c2=0;
-	if(opts==1){
-		//tutte
-		c1=94;
-		c2=33;
-	}else if(opts==2){
-		c1=26;//lettere minuscole
-		c2=97;
-	}else if(opts==3){
-		c1=26;	//lettere MAIUSCOLE
-		c2=65;
-	}else if(opts==4){
-		c1=10;	//numeri
-		c2=48;
-	}else if(opts>4 || opts<=0){
-		return -1; //ritorno -1 se opts è maggiore di 4 o minore/uguale a 0
-	}
-	
-	
-	srand(time(NULL));
-	for(int i=0;i<lung;i++){
-			p[i]=rand()%c1+c2; 
-	}
-return 0;	
-}
-void fileW(char name[],char p[],int l)
-{
-	FILE *fp; //creo un puntatore di tipo FILE
-
-	fp=fopen("filePass.txt","a"); //mod. append
-	if(fp){ //se il file è stato aperto,allora...
-		//scrivi "{name}: {password}\n
-		fprintf(fp,"%s: ",name);
-		for(int i=0;i<l;i++){ //fixed bug for windows
-			fprintf(fp,"%c",p[i]);	
-		}
-		fprintf(fp,"\n");
+	if(opts>4 || opts<=0){
+		done=-1; 
 	}else{
-		printf("\nerrore sull'apertura del file...");	
+		int c1,c2;
+		switch(opts){
+			case 1:	c1=94; /*tutti i char*/
+					c2=33;
+					break;
+			
+			case 2: c1=26; /*solo lettere minuscole*/
+					c2=97;
+					break;
+	
+			case 3:	c1=26; /*solo lettere maiuscole*/
+					c2=65;
+					break;
+				
+			case 4:	c1=10; /*solo numeri*/
+					c2=48;
+					break;
+		}
+		srand(time(NULL));
+		for(size_t i=0;i<lenght;++i){
+			p[i]=rand()%c1+c2; 
+		}
+		done=0;
 	}
-	fclose(fp); //chiudo il file
+
+return done;	
+}
+
+int write_file(const char* namefile,char nameaccount[],char *p,size_t l)
+{
+	int done=0;
+	
+	if(strlen(namefile)<=0){
+		done=-1;
+	}else{
+		FILE *fp; //creo un puntatore di tipo FILE
+		fp=fopen(namefile,"a"); 
+		if(fp){
+			//scrivi "{name}: {password}\n"
+			fprintf(fp,"%s: ",nameaccount);
+			for(size_t i=0;i<l;++i){ //fixed bug for windows
+				fprintf(fp,"%c",p[i]);	
+			}
+			fputs("\n",fp);
+		}else{
+			done=-1;
+		}
+		fclose(fp); //chiudo il file
+	}
+return done;
 }
