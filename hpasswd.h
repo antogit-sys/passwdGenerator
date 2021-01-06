@@ -1,5 +1,5 @@
 /*********************
- *	love languange C *
+ *  love languange C *
  *********************/ 
 
 /* macro */
