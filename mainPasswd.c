@@ -1,13 +1,13 @@
 /****************************
  *	
- * 	author: antogit-sys 
+ * author: antogit-sys 
  * 
- * 	=-=-=-=-=-=-=-=-=-=-=_
- * 	argv[0] nameprogramma
- * 	argv[1] nome account
- *	argv[2] num char passwd
- *	argv[3] --opts
- *	argv[4] num opts
+ * =-=-=-=-=-=-=-=-=-=-=_
+ * argv[0] nameprogramma
+ * argv[1] nome account
+ * argv[2] num char passwd
+ * argv[3] --opts
+ * argv[4] num opts
  ****************************/
   
 #include <stdio.h>
